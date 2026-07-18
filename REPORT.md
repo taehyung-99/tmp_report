@@ -106,7 +106,8 @@ clang -fsanitize=address -g my_uaf.c -o /tmp/my && /tmp/my
 ```
 
 **Q4.1** 당신의 UAF 의 '한 줄 요약'(무엇을 free 하고 어디서 다시 쓰나):
-> ______________________________________________________________
+> owner_b의 unref로 free된 버퍼를, 이미 자신도 unref했던 owner_a가 ->value로 다시 읽어서 UAF 발생
+![img](/images/0.png)
 
 <br>
 
