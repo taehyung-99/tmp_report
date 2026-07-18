@@ -1,6 +1,6 @@
 # 🧪 과제 — UAF 실습 키트 (직접 컴파일하고 눈으로 본다)
 
-> 멘티 이름 ______11반 김태형______  
+> 멘티 이름 ______11반 김태형______
 >
 > 이 과제는 **작은 C 예제 6개 + 챌린지 1개**를 직접 컴파일·실행하며 use-after-free 를
 > "눈으로" 익히는 것이다. 각 예제는 실행하면 힙 상태가 **색깔로 그려진다**.
@@ -105,7 +105,7 @@ printf("     first 첫 원소 읽기 => %d\n", v.a[0]);
 clang -fsanitize=address -g my_uaf.c -o /tmp/my && /tmp/my
 ```
 
-**Q4.1** 당신의 UAF 의 '한 줄 요약'(무엇을 free 하고 어디서 다시 쓰나):
+**Q4.1** 당신의 UAF 의 '한 줄 요약'(무엇을 free 하고 어디서 다시 쓰나): [my_uaf.c 파일 보기](https://github.com/taehyung-99/tmp_report/blob/main/my_uaf.c)
 > owner_b의 unref로 free된 버퍼를, 이미 자신도 unref했던 owner_a가 ->value로 다시 읽어서 UAF 발생
 ![img](/images/0.png)
 
